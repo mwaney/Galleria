@@ -1,0 +1,32 @@
+.galleryContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 620px;
+  margin: 0 auto;
+  gap: 10px;
+}
+
+.galleryContainer .image {
+  width: 200px;
+  cursor: pointer;
+}
+.galleryContainer .image img {
+  max-width: 100%;
+}
+.galleryContainer .image img:hover {
+  transform: scale(1.04);
+}
+
+.signoutBtn {
+  padding: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+  background-color: bisque;
+  border-radius: 8px;
+  border: none;
+}
+.signoutBtn:hover {
+  transform: scale(1.04);
+}
