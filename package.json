@@ -16,9 +16,14 @@
     "react": "^18.2.0",
     "react-beautiful-dnd": "^13.1.1",
     "react-dom": "^18.2.0",
+    "react-gesture-responder": "^2.1.0",
+    "react-grid-dnd": "^2.1.2",
     "react-grid-layout": "^1.4.1",
     "react-router-dom": "^6.16.0",
-    "yup": "^1.2.0"
+    "yup": "^1.2.0",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/material": "^5.11.3"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

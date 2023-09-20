@@ -8,12 +8,22 @@
   gap: 10px;
 }
 
+.galleryApp {
+  padding: 20px;
+}
+.centerColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .galleryContainer .image {
   width: 200px;
   cursor: pointer;
 }
 .galleryContainer .image img {
   max-width: 100%;
+  border-radius: 10px;
 }
 .galleryContainer .image img:hover {
   transform: scale(1.04);
@@ -26,7 +36,53 @@
   background-color: bisque;
   border-radius: 8px;
   border: none;
+  width: 200px;
+  font-size: large;
+  color: chocolate;
+  font-weight: bold;
 }
 .signoutBtn:hover {
   transform: scale(1.04);
+  background-color: beige;
+}
+
+@media screen and (max-width: 768px) {
+  .galleryContainer {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 600px;
+  }
+  .galleryApp {
+    display: flex;
+    padding: 10px;
+    margin-left: 30px;
+  }
+
+  .search-container {
+    width: 80%;
+    margin-left: 160px;
+  }
+  body {
+    overflow-x: hidden; /* Hide horizontal overflow on small screens (tablets) */
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .galleryContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 400px;
+  }
+
+  .galleryApp {
+    display: flex;
+    padding: 10px;
+    margin-left: 30px;
+  }
+  .search-container {
+    width: 300px; /* Adjust input size for mobile phones */
+  }
+  body {
+    overflow-x: hidden; /* Hide horizontal overflow on small screens (tablets) */
+  }
 }

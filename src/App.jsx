@@ -16,10 +16,11 @@ function App() {
   }, []);
   return (
     <BrowserRouter>
-      <h1 className="mainHeader">Galleria</h1>
       <div className="App">
+        <h1 className="mainHeader">Galleria</h1>
         <Routes>
           <Route path="/" Component={Login} />
+
           <Route
             path="/gallery"
             element={
