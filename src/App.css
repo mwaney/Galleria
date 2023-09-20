@@ -107,4 +107,8 @@ button[type="submit"]:hover {
     width: 230px;
     margin-left: -50px;
   }
+  .login-container {
+    width: 300px;
+    margin: 20px 30px 20px 0;
+  }
 }
