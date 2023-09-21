@@ -9,7 +9,6 @@ const SignOutButton = () => {
       const auth = getAuth(app);
       await signOut(auth);
       history("/");
-      // After signing out, you can add any additional logic like redirecting to a different page or showing a sign-out confirmation message.
     } catch (error) {
       console.error("Sign-out error:", error);
     }

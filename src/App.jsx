@@ -1,57 +1,3 @@
-// import "./App.css";
-// import Gallery from "./components/Gallery";
-// import Login from "./components/Login";
-// import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
-// import galleryImages from "./data/data";
-// import { useEffect, useState } from "react";
-// import { isAuthenticated } from "./components/AuthService";
-
-// function App() {
-//   const [authenticated, setAuthenticated] = useState(false);
-
-//   // useEffect(() => {
-//   //   isAuthenticated.then((userAuthenticated) => {
-//   //     console.log("User authenticated:", userAuthenticated);
-//   //     setAuthenticated(userAuthenticated);
-//   //   });
-//   // }, []);
-
-//   useEffect(() => {
-//     isAuthenticated()
-//       .then((userAuthenticated) => {
-//         console.log("User authenticated:", userAuthenticated);
-//         setAuthenticated(userAuthenticated);
-//       })
-//       .catch((error) => {
-//         console.error("Error:", error);
-//         setAuthenticated(false); // Handle errors and set authenticated to false
-//       });
-//   });
-//   return (
-//     <BrowserRouter>
-//       <div className="App">
-//         <h1 className="mainHeader">Galleria</h1>
-//         <Routes>
-//           <Route path="/" element={<Login />} />
-
-//           <Route
-//             path="/gallery"
-//             element={
-//               authenticated ? (
-//                 <Gallery galleryImages={galleryImages} />
-//               ) : (
-//                 <Navigate to="/" />
-//               )
-//             }
-//           />
-//         </Routes>
-//       </div>
-//     </BrowserRouter>
-//   );
-// }
-
-// export default App;
-
 import "./App.css";
 import { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
@@ -59,23 +5,22 @@ import {
   getAuth,
   onAuthStateChanged,
   signInWithEmailAndPassword,
-} from "firebase/auth"; // Import Firebase Auth functions
-import Gallery from "./components/Gallery";
+} from "firebase/auth";
 import Login from "./components/Login";
 import galleryImages from "./data/data";
-import firebaseApp from "./firebase"; // Adjust the import path for your Firebase initialization
+import firebaseApp from "./firebase";
+import Gallery3 from "./components/Gallery3";
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
   const auth = getAuth(firebaseApp);
 
-  // Check authentication status when the component mounts
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-        setAuthenticated(true); // User is authenticated
+        setAuthenticated(true);
       } else {
-        setAuthenticated(false); // User is not authenticated
+        setAuthenticated(false);
       }
     });
 
@@ -85,14 +30,11 @@ function App() {
     };
   }, [auth]);
 
-  // Handle user login (you can adjust this logic as needed)
   const handleLogin = async (email, password) => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      // Successful login
     } catch (error) {
       console.error("Error during login:", error);
-      // Handle login error
     }
   };
 
@@ -102,11 +44,12 @@ function App() {
         <h1 className="mainHeader">Galleria</h1>
         <Routes>
           <Route path="/" element={<Login onLogin={handleLogin} />} />
+
           <Route
             path="/gallery"
             element={
               authenticated ? (
-                <Gallery galleryImages={galleryImages} />
+                <Gallery3 images={galleryImages} />
               ) : (
                 <Navigate to="/" />
               )

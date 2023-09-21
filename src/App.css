@@ -10,7 +10,7 @@
   align-items: center;
   min-height: 100%;
   font-family: Arial, sans-serif;
-  padding-top: 100px;
+  padding-top: 50px;
   min-width: 410px;
 }
 
@@ -82,32 +82,52 @@ button[type="submit"]:hover {
 
 .search-container {
   margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  width: 50%;
+  border-radius: 10px;
+}
+
+.gallery-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.tags {
+  font-size: 1.2rem;
+  font-family: "Courier New", Courier, monospace;
+  width: 80%;
+}
+.tags > em {
+  font-weight: bold;
 }
 
 .search-container input {
-  width: 500px;
-  padding: 10px;
-  border-radius: 5px;
+  width: 100%;
+  border: 3px solid #bf9000;
+  padding: 15px;
+  height: 20px;
+  border-radius: 5px 5px 0 5px;
   outline: none;
+  color: #9dbfaf;
 }
 
+.search-container input:focus {
+  color: #d4a003;
+}
 .mainHeader {
   text-align: center;
   margin-top: 10px;
   font-size: 3rem;
 }
 
-@media screen and (max-width: 992px) {
-  .search-container input {
-    width: 300px;
-  }
-}
-
 @media screen and (max-width: 630px) {
-  .search-container input {
-    width: 230px;
-    margin-left: -50px;
-  }
   .login-container {
     width: 300px;
     margin: 20px 30px 20px 0;
@@ -116,4 +136,17 @@ button[type="submit"]:hover {
 
 .searchGal {
   margin-bottom: 20px;
+}
+
+.signoutBtn {
+  padding: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+  background-color: bisque;
+  border-radius: 8px;
+  border: none;
+  width: 200px;
+  font-size: large;
+  color: #d2691e;
+  font-weight: 700;
 }
