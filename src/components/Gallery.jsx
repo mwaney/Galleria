@@ -115,7 +115,9 @@ const Gallery = ({ galleryImages }) => {
 
   return (
     <div className="galleryApp centerColumn">
-      <Search searchTag={searchTag} setSearchTag={setSearchTag} />
+      <div className="searchGal">
+        <Search searchTag={searchTag} setSearchTag={setSearchTag} />
+      </div>
       <DragDropContext onDragEnd={handleOnDragEnd}>
         <Droppable droppableId="imageId">
           {(provided) => (
